@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --clr-gradient: hsl(6, 100%, 80%),hsl(335, 100%, 65%);
+    --clr-paleBlue: hsl(243, 100%, 93%);
+    --clr-GrayBlue: hsl(229, 7%, 55%);
+    --clr-blue-800: hsl(228, 56%, 26%);
+    --clr-blue-900: hsl(229, 57%, 11%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.875rem;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background-color: var(--clr-blue-900);
+    background-image: url("images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+
+.card-storage {
+    display: flex;
+    gap: 1.5rem;
+    width: 900px;
+}
+
+.loader {
+    background-color: var(--clr-blue-800);
+    border-radius: 0.5rem 4rem 0.5rem 0.5rem;
+    padding: 2rem;
+    height: 180px;
+    width: 35%;
+}
+
+.loader > img {
+    width: 120px;
+    margin-bottom: 1.8rem;
+}
+
+.icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.wrap {
+    width: 43px;
+    height: 43px;
+    background: var(--clr-blue-900);
+    border-radius: 0.5rem;
+    display: grid;
+    place-content: center;
+}
+
+.wrap > img {
+    width: 20px;
+}
+
+.storage {
+    align-self: end;
+    background-color: var(--clr-blue-800);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    height: 140px;
+    position: relative;
+    width: 65%;
+}
+
+.storage > p {
+    color: var(--clr-paleBlue);
+}
+
+.container {
+    width: 100%;
+    background: var(--clr-blue-900);
+    padding: 0.15rem;
+    border-radius: 1rem;
+    margin-block: 1rem 0.3rem;
+}
+
+.size {
+    width: 75%;
+    height: 12px;
+    background: linear-gradient(to right, var(--clr-gradient));
+    border-radius: 1rem;
+    position: relative;
+}
+
+.size::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    display: block;
+    background: var(--clr-paleBlue);
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+}
+
+.min-max {
+    color: var(--clr-paleBlue);
+    display: flex;
+    justify-content: space-between;
+}
+
+.min-max > p {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.gb-left {
+    background: #fff;
+    width: 180px;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.gb-left > span {
+    color: var(--clr-GrayBlue);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.gb-left {
+    position: absolute;
+    top: -50px;
+    right: 32px;
+}
+
+.gb-left::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -50%;
+    right: 0;
+    transform: translateY(-50%);
+    border-top: 20px solid transparent;
+	border-right: 30px solid #fff;
+	border-bottom: 20px solid transparent;
+}
+
+@media screen and (max-width: 940px) {
+
+    body {
+        background-image: url("images/bg-mobile.png");
+        background-size: cover;
+    }
+    .card-storage {
+        flex-direction: column;
+        width: 350px;
+    }
+
+    .loader,
+    .storage {
+        align-self: center;
+        width: 100%;
+    }
+
+    .gb-left {
+        right: 50%;
+        transform: translateX(50%);
+        top: 75%;
+    }
+
+    .gb-left::after {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .card-storage {
+        width: 300px;
+    }
+}
